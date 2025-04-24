@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+                </div>
+
+                <form id="login" class="input-group" action="login_process.php" method="POST">
+                    <h2>Welcome Back!</h2>
+                    <p>Login to continue your fitness journey</p>
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="remember" name="remember" class="check-box">
+                        <label for="remember">Remember Password</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                    <a href="#" class="forgot" onclick="openForgotPasswordModal()">Forgot Password?</a>
+                </form>
+
+                <form id="register" class="input-group" action="register_process.php" method="POST">
+                    <h2>Join Us Today!</h2>
+                    <p>Create an account to start your fitness journey</p>
+                    <input type="text" name="fullname" class="input-field" placeholder="Full Name" required>
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+
+                    <div class="gender-select">
+                        <label>Sex:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                           
+                    </div>
+
+                    <input type="tel" name="phone" class="input-field" placeholder="Phone Number" required>
+
+                    <div class="birthday-field">
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday" class="input-field" required>
+                    </div>
+
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <input type="password" name="confirm_password" class="input-field" placeholder="Confirm Password"
+                        required>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" class="check-box" required>
+                        <label for="terms">I agree to the Terms & Conditions</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reset Password</h2>
+            <p>Enter your email address to receive a password reset link.</p>
+            <form id="forgotPasswordForm" action="forgot_password.php" method="POST">
+                <input type="email" name="email" class="input-field" placeholder="Email" required>
+                <button type="submit" class="submit-btn">Send Reset Link</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
